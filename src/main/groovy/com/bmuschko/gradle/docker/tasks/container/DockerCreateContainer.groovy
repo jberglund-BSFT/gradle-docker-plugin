@@ -125,7 +125,7 @@ class DockerCreateContainer extends DockerExistingImage {
     @Optional
     final MapProperty<String, String> sysctls = project.objects.mapProperty(String, String)
     
-    @Input
+    @Nested
     @Optional
     final Property<HostConfig> hostConfig = project.objects.property(HostConfig)
     
