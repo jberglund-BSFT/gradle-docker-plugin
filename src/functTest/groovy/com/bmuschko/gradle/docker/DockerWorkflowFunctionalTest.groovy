@@ -45,7 +45,9 @@ class DockerWorkflowFunctionalTest extends AbstractGroovyDslFunctionalTest {
                 dependsOn buildImage
                 targetImageId buildImage.getImageId()
                 containerName = "$uniqueContainerName"
-                portBindings = ['8080:8080']
+                hostConfig = {
+                  portBindings = ['8080:8080']
+                }
                 cmd = ['/bin/sh']
             }
 
